@@ -1,3 +1,40 @@
+.preloader {
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1s ease 5s forwards;
+}
+
+.logo-corner {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    animation: blink 2s infinite;
+}
+
+.logo-corner img {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -8,7 +45,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Container & Sections */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -18,7 +54,6 @@ body {
     padding: 80px 0;
 }
 
-/* Header */
 .header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -52,7 +87,6 @@ body {
     color: #d4af37;
 }
 
-/* Hero */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.700)),
@@ -93,7 +127,6 @@ body {
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
 }
 
-/* About */
 .about-preview {
     background: #2d2d2d;
 }
@@ -117,7 +150,6 @@ body {
     list-style: disc;
 }
 
-/* Features */
 .features {
     background: #1a1a1a;
 }
@@ -153,7 +185,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Gallery */
 .gallery {
     background: #2d2d2d;
 }
@@ -200,7 +231,6 @@ body {
     font-weight: bold;
 }
 
-/* Footer */
 .footer {
     background: #1a1a1a;
     padding: 40px 0;
@@ -223,13 +253,28 @@ body {
     opacity: 0.6;
 }
 
-/* Animations */
+.developed-by {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.developed-by img {
+    height: 20px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hero h1 { font-size: 36px; }
